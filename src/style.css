@@ -12,6 +12,7 @@ body {
 body::before {
   content: "";
   position: fixed;
+  border: 2em;
   inset: 0;
   background: rgba(218, 141, 0, 0.110);
   z-index: -1;
@@ -19,6 +20,7 @@ body::before {
 
 header {
   position: fixed;
+  background: rgba(190, 87, 2, 0.712);
   top: 0;
   width: 100%;
   z-index: 10;
@@ -69,4 +71,22 @@ button:hover {
 
 h1 {
     color: rgb(22, 25, 58);
+}
+
+
+/* style for home and about pages */
+.content-card {
+    margin: 5%; 
+}
+
+.content-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    margin-bottom: .5rem;
+}
+
+.section-text {
+    margin-bottom: 1rem;
 }
