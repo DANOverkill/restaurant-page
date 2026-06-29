@@ -1,9 +1,70 @@
 body {
-    background-color: aquamarine;
+  margin: 0;
+  padding-top: 80px;
+  min-height: 100vh;
+
+  background-image: url("./assets/images/backgrounds/meadRack_straight_02.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-#testContent {
-    background-color: blueviolet;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(218, 141, 0, 0.110);
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+/* style rulls for content div */
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: min(90vw, 900px);
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+  
+
+  margin: 3rem auto;
+
+  background-color: rgba(228, 173, 23, 0.651);
+}
+
+@media (max-width: 600px) {
+  #content {
+    aspect-ratio: auto;
+    width: 90vw;
+    min-height: 70vh;
+  }
 }
 
 h1 {
