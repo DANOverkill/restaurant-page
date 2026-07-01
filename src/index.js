@@ -13,11 +13,12 @@ const homeBtn = document.querySelector('#homeBtn');
 const menuBtn = document.querySelector('#menuBtn');
 const aboutBtn = document.querySelector('#aboutBtn');
 
-// Content display write function
-writeHome(content);
 
-//initialize lightbox
-initLightbox();
+//initialize page and lightbox
+document.addEventListener('DOMContentLoaded', () => {
+    writeHome(content);
+    initLightbox();
+});
 
 // Event Listeners
 homeBtn.addEventListener ('click', () => writeHome(content));
