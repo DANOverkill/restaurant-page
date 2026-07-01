@@ -481,3 +481,54 @@
         #content:has(.menuItem)>.menuItem:nth-child(12) {
             animation-delay: 0.44s;
         }
+
+/* ---- LIGHTBOX MODAL ---- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    object-fit: contain;
+    animation: fadeUp 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: var(--color-warm);
+    transform: scale(1.1);
+}
+
+/* Show modal when active */
+.modal.show {
+    display: flex;
+}
+
+.image-gallery img,
+.menuItem img {
+    cursor: pointer;
+}

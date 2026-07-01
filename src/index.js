@@ -5,6 +5,7 @@ import "./style.css";
 import { writeHome } from "./home.js";
 import { writeMenu } from "./menu.js";
 import { writeAbout } from "./about.js";
+import { initLightbox } from './lightbox.js';
 
 //DOM Cash
 const content = document.querySelector('#content');
@@ -14,6 +15,9 @@ const aboutBtn = document.querySelector('#aboutBtn');
 
 // Content display write function
 writeHome(content);
+
+//initialize lightbox
+initLightbox();
 
 // Event Listeners
 homeBtn.addEventListener ('click', () => writeHome(content));
