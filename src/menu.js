@@ -29,7 +29,7 @@ let createMenuItem = function (menuItem) {
         <h3 class="itemName">${menuItem.name}</h3>
         <p>type: ${menuItem.type}</p>
         <img class="menuImage" src="${menuItem.image}" alt="${menuItem.name}">
-        <p class="description">description: ${menuItem.description}</p>
+        <p class="description">${menuItem.description}</p>
         <p class="price">price:CD$ ${menuItem.price}</p>
   `;
 
