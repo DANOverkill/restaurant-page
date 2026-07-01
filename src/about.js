@@ -1,8 +1,7 @@
+import aboutTemplate from "./about.html"
+
 function writeAbout (content) {
-    content.innerHTML = `
-        <div id="testContent">
-            <h1>This will be all about you!</h1>
-        </div>`;
+    content.innerHTML = aboutTemplate
 };
 
 
