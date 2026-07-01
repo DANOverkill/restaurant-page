@@ -1,16 +1,3 @@
-function writeMenu (content) {
-    content.innerHTML = `
-        <div id="testContent">
-            <h1>This is the Menu Page</h1>
-            <h3>Item 01</h3>
-            <h3>Item 02</h3>
-            <h3>Item ...</h3>
-        </div>`;
-};
-
-
-export {writeMenu};
-
 //menu images import
 import brazilianPFImage from "./assets/images/menu/dinner_brazilianPF.jpeg";
 import meatStewImage from "./assets/images/menu/dinner_meatStew.jpg";
@@ -23,9 +10,38 @@ import miruvorImage from "./assets/images/menu/mead_miruvor.jpg";
 import nostalgiaBlueImage from "./assets/images/menu/mead_nostalgiaBlue.jpg";
 import raspberryFreezyImage from "./assets/images/menu/mead_raspberryFreezy.jpg";
 
+//dynamic html logic
+function writeMenu (content) {
+    content.innerHTML = "";
+    menu.forEach(item => {
+        content.appendChild(createMenuItem(item));
+    });
+};
+
+let createMenuItem = function (menuItem) {
+    let card = document.createElement('div');
+    
+    card.className = 'menuItem'; 
+
+    card.dataset.id = menuItem.id;
+
+    card.innerHTML = `
+        <h3 class="itemName">${menuItem.name}</h3>
+        <p>type: ${menuItem.type}</p>
+        <img class="menuImage" src="${menuItem.image}" alt="${menuItem.name}">
+        <p class="description">description: ${menuItem.description}</p>
+        <p class="price">price:CD$ ${menuItem.price}</p>
+  `;
+
+  return card; 
+}
+
+
+//Menu Array
 const menu = [
     // MEADS
     {
+        id: crypto.randomUUID(),
         type: "mead",
         name: "Bacus",
         image: bacusImage,
@@ -33,6 +49,7 @@ const menu = [
         price: 25
     },
     {
+        id: crypto.randomUUID(),
         type: "mead",
         name: "Blucefalus",
         image: blucefalusImage,
@@ -40,6 +57,7 @@ const menu = [
         price: 28
     },
     {
+        id: crypto.randomUUID(),
         type: "mead",
         name: "Ginger Lime Mead",
         image: gingerLimeImage,
@@ -47,6 +65,7 @@ const menu = [
         price: 24
     },
     {
+        id: crypto.randomUUID(),
         type: "mead",
         name: "Miruvor",
         image: miruvorImage,
@@ -54,6 +73,7 @@ const menu = [
         price: 30
     },
     {
+        id: crypto.randomUUID(),
         type: "mead",
         name: "Nostalgia Blue",
         image: nostalgiaBlueImage,
@@ -61,6 +81,7 @@ const menu = [
         price: 26
     },
     {
+        id: crypto.randomUUID(),
         type: "mead",
         name: "Raspberry Freezy",
         image: raspberryFreezyImage,
@@ -70,6 +91,7 @@ const menu = [
 
     // DINNERS
     {
+        id: crypto.randomUUID(),
         type: "dinner",
         name: "Brazilian PF",
         image: brazilianPFImage,
@@ -77,6 +99,7 @@ const menu = [
         price: 32
     },
     {
+        id: crypto.randomUUID(),
         type: "dinner",
         name: "Meat Stew",
         image: meatStewImage,
@@ -84,6 +107,7 @@ const menu = [
         price: 29
     },
     {
+        id: crypto.randomUUID(),
         type: "dinner",
         name: "Not Big Mac",
         image: notBigMacImage,
@@ -92,3 +116,5 @@ const menu = [
     }
 ];
 
+//Export
+export {writeMenu};
